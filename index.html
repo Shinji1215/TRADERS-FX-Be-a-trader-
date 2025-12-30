@@ -1,13 +1,158 @@
 <!DOCTYPE html>
 <html lang="ja">
-  <head>
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Traders FX</title>
+    <title>Traders FX | High-Income Skill Mastery</title>
     <script src="https://cdn.tailwindcss.com"></script>
-  </head>
-  <body>
+    <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,400..900;1,400..900&family=Inter:wght@300;400;500;600;700;800&family=Noto+Sans+JP:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <style>
+        :root { --primary-bg: #020617; }
+        body { font-family: 'Inter', 'Noto Sans JP', sans-serif; background-color: var(--primary-bg); color: #f8fafc; overflow-x: hidden; }
+        .gold-gradient { background: linear-gradient(135deg, #fef3c7 0%, #d4af37 50%, #92400e 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .glass-card { background: rgba(15, 23, 42, 0.6); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.1); }
+        .hero-pattern { background-image: radial-gradient(circle at 2px 2px, rgba(212, 175, 55, 0.15) 1px, transparent 0); background-size: 40px 40px; }
+    </style>
+</head>
+<body>
     <div id="root"></div>
-    <script type="module" src="./index.tsx"></script>
-  </body>
+
+    <script type="importmap">
+    {
+        "imports": {
+            "react": "https://esm.sh/react@18.2.0",
+            "react-dom": "https://esm.sh/react-dom@18.2.0/client",
+            "framer-motion": "https://esm.sh/framer-motion@10.16.4",
+            "lucide-react": "https://esm.sh/lucide-react@0.284.0"
+        }
+    }
+    </script>
+
+    <script type="module">
+        import React, { useEffect } from 'react';
+        import ReactDOM from 'react-dom';
+        import { motion, AnimatePresence } from 'framer-motion';
+        import { TrendingUp, ShieldCheck, Clock, Zap, HelpCircle, ChevronRight } from 'lucide-react';
+
+        const App = () => {
+            return (
+                <div className="min-h-screen hero-pattern">
+                    {/* Navigation */}
+                    <nav className="fixed top-0 w-full z-50 glass-card px-6 py-4">
+                        <div className="max-w-7xl mx-auto flex justify-between items-center">
+                            <span className="text-2xl font-bold gold-gradient serif-display italic">Traders FX</span>
+                            <div className="hidden md:flex space-x-8 text-sm font-medium">
+                                <a href="#concept" className="hover:text-amber-400 transition">Concept</a>
+                                <a href="#method" className="hover:text-amber-400 transition">Method</a>
+                                <a href="#faq" className="hover:text-amber-400 transition">FAQ</a>
+                            </div>
+                        </div>
+                    </nav>
+
+                    {/* Hero Section */}
+                    <section className="pt-32 pb-20 px-6">
+                        <div className="max-w-7xl mx-auto text-center">
+                            <motion.div 
+                                initial={{ opacity: 0, y: 20 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                transition={{ duration: 0.8 }}
+                            >
+                                <h1 className="text-5xl md:text-7xl font-black mb-6 leading-tight">
+                                    そのトレードは、<br/>
+                                    <span className="gold-gradient">自由への投資か？</span>
+                                </h1>
+                                <p className="text-xl text-slate-400 max-w-2xl mx-auto mb-10">
+                                    労働から解放されるための「ハイインカムスキル」を。
+                                    戦略的に時間を絞り、効率的に利益を射抜くスキャルピングの極意。
+                                </p>
+                                <button className="bg-gradient-to-r from-amber-200 via-yellow-500 to-amber-700 text-black font-bold px-8 py-4 rounded-full text-lg hover:scale-105 transition-transform shadow-lg shadow-yellow-500/20">
+                                    Discordコミュニティに参加する
+                                </button>
+                            </motion.div>
+                        </div>
+                    </section>
+
+                    {/* Why High Income Skill? */}
+                    <section id="concept" className="py-20 px-6">
+                        <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+                            <motion.div 
+                                initial={{ opacity: 0, x: -30 }}
+                                whileInView={{ opacity: 1, x: 0 }}
+                                viewport={{ once: true }}
+                                className="glass-card p-8 rounded-3xl"
+                            >
+                                <TrendingUp className="text-amber-400 mb-4" size={40} />
+                                <h2 className="text-3xl font-bold mb-4">なぜハイインカムスキルが必要なのか？</h2>
+                                <p className="text-slate-300 leading-relaxed">
+                                    現代において、単なる労働収入だけでは真の自由は手に入りません。場所や時間に縛られず、自分の知性と決断一つで資産を増幅させる「稼ぐ力」こそが、予測不能な時代を生き抜く唯一の武器となります。
+                                </p>
+                            </motion.div>
+                            <motion.div 
+                                initial={{ opacity: 0, x: 30 }}
+                                whileInView={{ opacity: 1, x: 0 }}
+                                viewport={{ once: true }}
+                                className="glass-card p-8 rounded-3xl"
+                            >
+                                <Zap className="text-amber-400 mb-4" size={40} />
+                                <h2 className="text-3xl font-bold mb-4">なぜFXなのか？</h2>
+                                <p className="text-slate-300 leading-relaxed">
+                                    FXは世界最大の市場流動性を誇ります。数万から数億まで、同じ手法でスケールアップが可能です。短時間で資金を増幅させる圧倒的なスピード感は、他の投資手法にはない最大のメリットです。
+                                </p>
+                            </motion.div>
+                        </div>
+                    </section>
+
+                    {/* Trading Method */}
+                    <section id="method" className="py-20 bg-slate-900/50 px-6 text-center">
+                        <div className="max-w-4xl mx-auto">
+                            <h2 className="text-4xl font-bold mb-12">戦略的スキャルピング手法</h2>
+                            <div className="grid md:grid-cols-3 gap-6">
+                                {[
+                                    { icon: <Clock />, title: "時間を絞る", desc: "1日中チャートを見るのは労働と同じ。勝てる時間帯のみを狙い撃つ。" },
+                                    { icon: <ShieldCheck />, title: "3つの根拠", desc: "感覚を排除した数学的・統計的根拠に基づくエントリー。" },
+                                    { icon: <Zap />, title: "10-20pips", desc: "欲張らず、高確率な値幅を確実に利確し積み上げる。" }
+                                ].map((item, i) => (
+                                    <motion.div 
+                                        key={i}
+                                        whileHover={{ y: -10 }}
+                                        className="glass-card p-6 rounded-2xl border-t-2 border-amber-500/50"
+                                    >
+                                        <div className="text-amber-400 flex justify-center mb-4">{item.icon}</div>
+                                        <h3 className="text-xl font-bold mb-2">{item.title}</h3>
+                                        <p className="text-sm text-slate-400">{item.desc}</p>
+                                    </motion.div>
+                                ))}
+                            </div>
+                        </div>
+                    </section>
+
+                    {/* FAQ */}
+                    <section id="faq" className="py-20 px-6">
+                        <div className="max-w-3xl mx-auto">
+                            <h2 className="text-3xl font-bold mb-8 flex items-center gap-2">
+                                <HelpCircle className="text-amber-400" /> よくある質問
+                            </h2>
+                            <div className="space-y-4">
+                                <div className="glass-card p-6 rounded-xl">
+                                    <h4 className="font-bold text-lg mb-2">Q. FXはギャンブルではありませんか？</h4>
+                                    <p className="text-slate-400">
+                                        いいえ。FXは大手金融機関も参入する巨大な金融市場です。適切なリスク管理と戦略的分析があれば、それは「博打」ではなく「投資」へと昇華されます。
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    {/* Footer */}
+                    <footer className="py-10 text-center border-t border-slate-800 text-slate-500 text-sm">
+                        <p>© 2024 Traders FX Community. High-Income Skill Acquisition.</p>
+                    </footer>
+                </div>
+            );
+        };
+
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+        root.render(<App />);
+    </script>
+</body>
 </html>
